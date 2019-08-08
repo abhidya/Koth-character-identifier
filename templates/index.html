@@ -3,30 +3,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="/static/css/styles.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 </head>
 
 <body style='background: #fcbe9d'>
 <div class="bg">
 
-    <!-- Load icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- The form -->
     <div id="parent">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <br>
         <form class="example" action="/results" id="handle_form" method="post" style="margin:auto;max-width:300px"
               onsubmit="hideentry();">
-            <img src="/static/images/bobby.jpg" alt="Bobby Hill">
+            <img src="/static/images/bobby_home.jpg" alt="Bobby Hill">
             <br>
             <br>
             <input type='text' class='input_text' name='twittername' placeholder='Enter Twitter Handle'>
@@ -38,89 +34,81 @@
     </div>
     <div id="fade"></div>
 </div>
+
+
+<div class="MainContainer" id="visualizations" style="display: none"><br>
+    <div class="ContentContainer" style="position: relative; height:100vh; width:100vw">
+        <div class="Content">
+            <h1 class="center" id="proclamation"></h1>
+            <img class="center" id="biggie_char">
+        </div>
+    </div>
+
+
+    <div class="chart" style="position: relative; height:85vh; width:100vw; display:inline-block">
+        <div style="position: relative; height:60vh; width:60vw;text-align:center; float:left;">
+            <h2>Tweet Breakdown</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <div class="ContentContainer" style="position: relative; height:100vh; width:100vw;">
+        <div class="Content">
+            <br>
+            <br>
+            <h1 style="text-align:center"> Top Quotes</h1>
+            <blockquote class="ludwig" id="Most_Hank">
+// Put the rest of my page content here
+</blockquote>
+            <footer id="Most_Hank_conf">
+// Put the rest of my page content here
+</footer>
+                        <br>
+            <br>
+
+            <blockquote class="ludwig" id="Most_Peggy"></blockquote>
+            <footer id="Most_Peggy_conf"></footer>
+            <br>
+            <br>
+
+            <blockquote class="ludwig" id="Most_Bobby"></blockquote>
+            <footer id="Most_Bobby_conf"></footer>
+            <br>
+            <br>
+
+            <blockquote class="ludwig" id="Most_Dale"></blockquote>
+            <footer id="Most_Dale_conf"></footer>
+            <br>
+            <br>
+            <br>
+                        <h1 style="text-align:center"> Least Quotes</h1>
+
+            <blockquote class="ludwig" id="least_Hank"></blockquote>
+            <footer id="least_Hank_conf"></footer>
+                        <br>
+            <br>
+
+            <blockquote class="ludwig" id="least_Peggy"></blockquote>
+            <footer id="least_Peggy_conf"></footer>
+            <br>
+            <br>
+
+            <blockquote class="ludwig" id="least_Bobby"></blockquote>
+            <footer id="least_Bobby_conf"></footer>
+            <br>
+            <br>
+
+            <blockquote class="ludwig" id="least_Dale"></blockquote>
+            <footer id="least_Dale_conf"></footer>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+    <br>
+</div>
 </body>
-<script>
-    function hideentry() {
-        $("#handle_form").hide(400);
-        $('body').css('background', 'blue');
-    }
+<script src="/static/js/functions.js"></script>
 
-    function openModal() {
-        document.getElementById('modal').style.display = 'block';
-        document.getElementById('fade').style.display = 'block';
-    }
-
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-        document.getElementById('fade').style.display = 'none';
-    }
-
-    function getKeysWithHighestValue(o, n) {
-        var keys = Object.keys(o);
-        keys.sort(function (a, b) {
-            return o[b] - o[a];
-        })
-        console.log(keys);
-        return keys.slice(0, n);
-    }
-
-</script>
-<script>
-
-    var frm = $('#handle_form');
-
-    //$("body").addClass("loading");
-
-    frm.submit(function (e) {
-
-        e.preventDefault();
-
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
-            beforeSend: function () {
-                openModal();
-            },
-            success: function (data) {
-                console.log('Submission was successful.');
-                console.log(data)
-                data = JSON.parse(data);
-                var i;
-                var k;
-                var l;
-                var character_values = {};
-                for (i = 0; i < data.length; i++) {
-                    Object.keys(data[i]).forEach(function (key) {
-                        console.log(key);
-                        var tweets = (data[i][key]);
-
-                        for (var k = 0; k < tweets.length; k++) {
-                            var name = tweets[k][0];
-                            var value = tweets[k][1];
-                            character_values[name] = (character_values[name] || 0) + 1;
-                            character_values[name] += parseFloat(value);
-                            console.log(tweets[k][0], tweets[k][1]);
-                            //Do something
-                        }
-                    });
-
-                }
-
-
-                alert(getKeysWithHighestValue(character_values, 1)[0]);
-            },
-
-            complete: function (data) {
-                closeModal();
-
-            },
-            error: function (data) {
-                console.log('An error occurred.');
-                console.log(data);
-            },
-        });
-    });
-
-</script>
 </html>
