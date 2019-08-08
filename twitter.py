@@ -56,12 +56,12 @@ def clean_tweets(tweets):
 
 def hitting_twitter(handle):
     min_position, tweets = get_tweets(handle)
-    # while True:
-    #     min_position1, links1 = get_tweets(handle, min_position)
-    #     tweets = tweets + links1
-    #     if min_position1 is None:
-    #         break
-    #     min_position = min_position1
+    for i in range(0,6):
+        min_position1, links1 = get_tweets(handle, min_position)
+        tweets = tweets + links1
+        if min_position1 is None:
+            break
+        min_position = min_position1
 
     if tweets == "Twitter Search Error: Is the username correct":
         return tweets
