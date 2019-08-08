@@ -38,7 +38,6 @@ def get_tweets(handle, max_position=None):
     url = "https://twitter.com/i/profiles/show/" + handle + "/timeline/tweets?include_available_features=false&include_entities=false&reset_error_state=false"
     if max_position != None:
         url = url + "&" + "max_position=" + max_position
-    #print(url)
     browser.open(url)
     try:
         result = json.loads(browser.response.content)
@@ -57,12 +56,12 @@ def clean_tweets(tweets):
 
 def hitting_twitter(handle):
     min_position, tweets = get_tweets(handle)
-    while True:
-        min_position1, links1 = get_tweets(handle, min_position)
-        tweets = tweets + links1
-        if min_position1 is None:
-            break
-        min_position = min_position1
+    # while True:
+    #     min_position1, links1 = get_tweets(handle, min_position)
+    #     tweets = tweets + links1
+    #     if min_position1 is None:
+    #         break
+    #     min_position = min_position1
 
     if tweets == "Twitter Search Error: Is the username correct":
         return tweets
