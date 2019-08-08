@@ -3,6 +3,7 @@ from twitter import hitting_twitter
 from ml import build_model
 import json
 
+from waitress import serve
 app = Flask(__name__)
 app.debug = True
 app.secret_key = 'development key'
@@ -30,4 +31,4 @@ def results():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    serve(app, host='0.0.0.0', port=8080)

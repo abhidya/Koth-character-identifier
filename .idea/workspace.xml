@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1b48a47-3a4d-44e0-b394-9f7e8d1c6e38" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/twitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/twitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565219031654</updated>
       <workItem from="1565219035244" duration="12551000" />
-      <workItem from="1565235005465" duration="16585000" />
+      <workItem from="1565235005465" duration="16675000" />
     </task>
     <task id="LOCAL-00001" summary="Almost done! Added data visualizations&#10;&#10;Need to improve model and add about page">
       <created>1565294461503</created>
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565301849242</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="5 pages of twitter">
+      <created>1565301922588</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565301922588</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,9 +175,10 @@
     <MESSAGE value="label images removed due to resizing issues" />
     <MESSAGE value="formating" />
     <MESSAGE value="removed characters" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed characters" />
+    <MESSAGE value="5 pages of twitter" />
+    <option name="LAST_COMMIT_MESSAGE" value="5 pages of twitter" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CharacterGuesser$CharacterGuesser.coverage" NAME="CharacterGuesser Coverage Results" MODIFIED="1565301846671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CharacterGuesser$CharacterGuesser.coverage" NAME="CharacterGuesser Coverage Results" MODIFIED="1565301943721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
