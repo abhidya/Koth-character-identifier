@@ -88,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565219031654</updated>
       <workItem from="1565219035244" duration="12551000" />
-      <workItem from="1565235005465" duration="13518000" />
+      <workItem from="1565235005465" duration="16383000" />
     </task>
     <task id="LOCAL-00001" summary="Almost done! Added data visualizations&#10;&#10;Need to improve model and add about page">
       <created>1565294461503</created>
@@ -111,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1565297937642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="label images removed due to resizing issues">
+      <created>1565298496317</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565298496317</updated>
+    </task>
+    <task id="LOCAL-00005" summary="label images removed due to resizing issues">
+      <created>1565298502794</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565298502794</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,9 +146,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Almost done! Added data visualizations&#10;&#10;Need to improve model and add about page" />
     <MESSAGE value="fake it to make it worked!" />
-    <option name="LAST_COMMIT_MESSAGE" value="fake it to make it worked!" />
+    <MESSAGE value="label images removed due to resizing issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="label images removed due to resizing issues" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CharacterGuesser$CharacterGuesser.coverage" NAME="CharacterGuesser Coverage Results" MODIFIED="1565298498803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CharacterGuesser$CharacterGuesser.coverage" NAME="CharacterGuesser Coverage Results" MODIFIED="1565301708095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

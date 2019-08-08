@@ -10,6 +10,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
     <script type="text/javascript"
             src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
 </head>
 
 <body style='background: #fcbe9d'>
@@ -38,19 +56,34 @@
 
 <div class="MainContainer" id="visualizations" style="display: none"><br>
     <div class="ContentContainer" style="position: relative; height:100vh; width:100vw">
-            <h1 class="center" id="proclamation"></h1>
-            <img class="center" id="biggie_char" style="max-height:100%; max-width:100%;    object-fit: contain;">
+        <h1 class="center" id="proclamation" style=" margin-left: 30vw"></h1>
+        <img class="center" id="biggie_char" style="max-height:80%; max-width:80%;    object-fit: contain;">
     </div>
 
 
-    <div class="chart" style="position: relative; height:85vh; width:100vw; display:inline-block">
-        <div style="position: relative; height:60vh; width:60vw;text-align:center; float:left;">
-            <h2>Tweet Breakdown</h2>
-            <canvas id="myChart"></canvas>
+    <div style="position: relative; height:40vh; width:40vw;text-align:center; margin-left: 30vw" class="chart">
+        <h2>Tweet Breakdown</h2>
+        <canvas id="myChart"></canvas>
+    </div>
+    <br>
+
+    <br>
+    <div class="ContentContainer" style="position: relative; height:100vh; width:80vw;  margin-right: 10vw;
+  margin-left: 10vw;">
+        <div class="row" style="position: relative; height:20vh; width:100vw">
+            <div class="column">
+                <img src="/static/images/bobby.png" alt="Snow" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="/static/images/dale.png" alt="Forest" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="/static/images/hank.png" alt="Mountains" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="/static/images/peggy.png" alt="Mountains" style="width:100%">
+            </div>
         </div>
-    </div>
-
-    <div class="ContentContainer" style="position: relative; height:100vh; width:100vw;">
         <div class="Content">
             <br>
             <br>

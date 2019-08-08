@@ -191,6 +191,7 @@ frm.submit(function (e) {
                 options: {
                     responsive: true,
                     responsiveAnimationDuration: 2,
+                        maintainAspectRatio: false,
                     legend: {
                         display: true,
                         position: 'right',
