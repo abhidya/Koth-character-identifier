@@ -2,22 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1b48a47-3a4d-44e0-b394-9f7e8d1c6e38" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/big_bobby.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/big_dale.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/big_hank.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/big_peggy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/bobby.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/dale.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/hank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/peggy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faked_koth_quotes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/.ipynb_checkpoints/toperson-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/ExtractedTweets.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/Untitled.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/bobby.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/dale.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/faked_koth_quotes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/hank.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/koth_quotes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/peggy.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/toperson.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/tweets.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fakeit2makeit/tweets_public.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bobby.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/bobby.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/bobby_home.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/twitter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,8 +105,16 @@
       <option name="presentableId" value="Default" />
       <updated>1565219031654</updated>
       <workItem from="1565219035244" duration="12551000" />
-      <workItem from="1565235005465" duration="10365000" />
+      <workItem from="1565235005465" duration="12694000" />
     </task>
+    <task id="LOCAL-00001" summary="Almost done! Added data visualizations&#10;&#10;Need to improve model and add about page">
+      <created>1565294461503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565294461503</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,8 +133,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Almost done! Added data visualizations&#10;&#10;Need to improve model and add about page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done! Added data visualizations&#10;&#10;Need to improve model and add about page" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CharacterGuesser$CharacterGuesser.coverage" NAME="CharacterGuesser Coverage Results" MODIFIED="1565294409478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CharacterGuesser$CharacterGuesser.coverage" NAME="CharacterGuesser Coverage Results" MODIFIED="1565296066080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

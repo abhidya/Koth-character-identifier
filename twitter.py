@@ -42,11 +42,13 @@ def get_tweets(handle, max_position=None):
     browser.open(url)
     try:
         result = json.loads(browser.response.content)
+        min_position = result['min_position']
+
     except ValueError:
         return "Twitter Search Error: Is the username correct"
     soup = BeautifulSoup(result['items_html'], 'lxml')
     tweets = soup.find_all("p", {"class": "TweetTextSize TweetTextSize--normal js-tweet-text tweet-text"})
-    return tweets
+    return min_position, tweets
 
 
 def clean_tweets(tweets):
@@ -54,7 +56,14 @@ def clean_tweets(tweets):
 
 
 def hitting_twitter(handle):
-    tweets = get_tweets(handle)
+    min_position, tweets = get_tweets(handle)
+    while True:
+        min_position1, links1 = get_tweets(handle, min_position)
+        tweets = tweets + links1
+        if min_position1 is None:
+            break
+        min_position = min_position1
+
     if tweets == "Twitter Search Error: Is the username correct":
         return tweets
     tweets = clean_tweets(tweets)

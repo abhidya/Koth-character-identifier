@@ -38,11 +38,16 @@ def droprows(filtered, bad_bois):
 
 
 def build_model():
-    if path.exists("koth_quotes.csv"):
-        df = pd.read_csv("koth_quotes.csv")
+
+    file = "faked_koth_quotes.csv"
+    # file = "koth_quotes.csv"
+
+
+    if path.exists(file):
+        df = pd.read_csv(file)
     else:
         df = koth_df()  # Scraping
-        df.to_csv("koth_quotes.csv", index=False)
+        df.to_csv(file, index=False)
 
     # Analysis
     # df.Character.value_counts()

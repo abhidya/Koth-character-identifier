@@ -41,22 +41,87 @@ function getKeysWithHighestValue(o, n) {
 
 var config = {};
 var character_values = {};
-var mostBobby ="";
-var mostHank ="";
-var mostDale="";
-var mostPeggy ="";
-var mostBobbyConf =0;
-var mostHankConf  =0;
-var mostDaleConf =0;
-var mostPeggyConf  =0;
-var leastBobby ="";
-var leastHank ="";
-var leastDale="";
-var leastPeggy ="";
-var leastBobbyConf =-99;
-var leastHankConf  =-99;
-var leastDaleConf =-99;
-var leastPeggyConf  =-99;
+var mostBobby = "";
+var mostHank = "";
+var mostDale = "";
+var mostPeggy = "";
+var mostBobbyConf = -99;
+var mostHankConf = -99;
+var mostDaleConf = -99;
+var mostPeggyConf = -99;
+var leastBobby = "";
+var leastHank = "";
+var leastDale = "";
+var leastPeggy = "";
+var leastBobbyConf = 99;
+var leastHankConf = 99;
+var leastDaleConf = 99;
+var leastPeggyConf = 99;
+
+
+function findmaxmin(key, name, value) {
+    switch (name) {
+        case "hank":
+            if (value > mostHankConf) {
+                mostHankConf = value;
+                mostHank = key;
+            }
+            if (value < leastHankConf) {
+                leastHankConf = value;
+                leastHank = key;
+            }
+            break;
+        case "dale":
+            if (value > mostDaleConf) {
+                mostDaleConf = value;
+                mostDale = key;
+            }
+            if (value < leastDaleConf) {
+                leastDaleConf = value;
+                leastDale = key;
+            }
+            break;
+        case "peggy":
+            if (value > mostPeggyConf) {
+                mostPeggyConf = value;
+                mostPeggy = key;
+            }
+            if (value < leastPeggyConf) {
+                leastPeggyConf = value;
+                leastPeggy = key;
+            }
+            break;
+        case "bobby":
+            if (value > mostBobbyConf) {
+                mostBobbyConf = value;
+                mostBobby = key;
+            }
+            if (value < leastBobbyConf) {
+                leastBobbyConf = value;
+                leastBobby = key;
+            }
+            break;
+    }
+}
+
+
+function buildmaxmin() {
+    $("#Most_Bobby").text(mostBobby);
+    $("#Most_Bobby_conf").text("Confidence Level :   " + mostBobbyConf);
+    $("#Most_Dale").text(mostDale);
+    $("#Most_Dale_conf").text("Confidence Level :   " + mostDaleConf);
+    $("#Most_Hank").text(mostHank);
+    $("#Most_Hank_conf").text("Confidence Level :   " + mostHankConf);
+    $("#Most_Peggy").text(mostPeggy);
+    $("#Most_Peggy_conf").text("Confidence Level :   " + mostPeggyConf);
+    $("#least_Bobby_conf").text("Confidence Level :   " + leastBobbyConf);
+    $("#least_Dale").text(leastDale);
+    $("#least_Dale_conf").text("Confidence Level :   " + leastDaleConf);
+    $("#least_Hank").text(leastHank);
+    $("#least_Hank_conf").text("Confidence Level :   " + leastHankConf);
+    $("#least_Peggy").text(leastPeggy);
+    $("#least_Peggy_conf").text("Confidence Level " + leastPeggyConf);
+}
 
 var ctx = document.getElementById("myChart").getContext("2d");
 
@@ -92,6 +157,7 @@ frm.submit(function (e) {
                     for (var k = 0; k < tweets.length; k++) {
                         var name = tweets[k][0];
                         var value = tweets[k][1];
+                        findmaxmin(key, name, value);
                         character_values[name] = (character_values[name] || 0) + 1;
                         character_values[name] += parseFloat(value);
                         console.log(tweets[k][0], tweets[k][1]);
@@ -173,7 +239,7 @@ frm.submit(function (e) {
             $("#visualizations").css("display", "block");
             build_main();
             new Chart(ctx, config);
-
+            buildmaxmin();
         },
         error: function (data) {
             console.log('An error occurred.');
