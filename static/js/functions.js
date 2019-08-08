@@ -202,27 +202,27 @@ frm.submit(function (e) {
                     plugins: {
                         labels: {
                             render: 'image',
-                            images: [{
-                                src: '/static/images/hank.png',
-                                width: 120,
-                                height: 122
-                            },
-                                {
-                                    src: '/static/images/dale.png',
-                                    width: 120,
-                                    height: 140
-                                },
-                                {
-                                    src: '/static/images/peggy.png',
-                                    width: 120,
-                                    height: 119
-                                },
-                                {
-                                    src: '/static/images/bobby.png',
-                                    width: 120,
-                                    height: 140
-                                },
-                            ]
+                            // images: [{
+                            //     src: '/static/images/hank.png',
+                            //     width: :10vh,
+                            //     height: 10vw
+                            // },
+                            //     {
+                            //         src: '/static/images/dale.png',
+                            //         width: 120,
+                            //         height: 140
+                            //     },
+                            //     {
+                            //         src: '/static/images/peggy.png',
+                            //         width: 120,
+                            //         height: 119
+                            //     },
+                            //     {
+                            //         src: '/static/images/bobby.png',
+                            //         width: 120,
+                            //         height: 140
+                            //     },
+                            // ]
                         }
                     },
                     animation: {

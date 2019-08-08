@@ -18,30 +18,30 @@ https://fonts.googleapis.com/css?family=Roboto:100
 }
 
 
-.chart {
-    display: flex;
-    flex: 1 0 auto;
-    position: relative;
-    height: 100vh;
-    transform: translateZ(-1px) scale(2);
-    z-index: -1;
+/*.chart {*/
+/*    display: flex;*/
+/*    flex: 1 0 auto;*/
+/*    position: relative;*/
+/*    height: 100vh;*/
+/*    transform: translateZ(-1px) scale(2);*/
+/*    z-index: -1;*/
 
-}
+/*}*/
 
-.MainContainer {
-    perspective: 1px;
-    transform-style: preserve-3d;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
+/*.MainContainer {*/
+/*    perspective: 1px;*/
+/*    transform-style: preserve-3d;*/
+/*    height: 100vh;*/
+/*    overflow-x: hidden;*/
+/*    overflow-y: scroll;*/
+/*}*/
 
-.ContentContainer {
-    display: block;
-    position: relative;
-    background-color: #7FDBFF;
-    z-index: 1;
-}
+/*.ContentContainer {*/
+/*    display: block;*/
+/*    position: relative;*/
+/*    background-color: #7FDBFF;*/
+/*    z-index: 1;*/
+/*}*/
 
 .center {
     display: block;
@@ -54,7 +54,11 @@ https://fonts.googleapis.com/css?family=Roboto:100
     width: 80em;
     margin: 2em auto;
 }
-
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
 
 .ludwig {
     position: relative;
