@@ -1,0 +1,126 @@
+{#<script src="/static/lib/js/jquery.min.js"></script>#}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body style='background: #fcbe9d'>
+<div class="bg">
+
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- The form -->
+    <div id="parent">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form class="example" action="/results" id="handle_form" method="post" style="margin:auto;max-width:300px"
+              onsubmit="hideentry();">
+            <img src="/static/images/bobby.jpg" alt="Bobby Hill">
+            <br>
+            <br>
+            <input type='text' class='input_text' name='twittername' placeholder='Enter Twitter Handle'>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div id="modal">
+        <img id="loader" src="/static/images/loading.gif"/>
+    </div>
+    <div id="fade"></div>
+</div>
+</body>
+<script>
+    function hideentry() {
+        $("#handle_form").hide(400);
+        $('body').css('background', 'blue');
+    }
+
+    function openModal() {
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+    }
+
+    function getKeysWithHighestValue(o, n) {
+        var keys = Object.keys(o);
+        keys.sort(function (a, b) {
+            return o[b] - o[a];
+        })
+        console.log(keys);
+        return keys.slice(0, n);
+    }
+
+</script>
+<script>
+
+    var frm = $('#handle_form');
+
+    //$("body").addClass("loading");
+
+    frm.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            beforeSend: function () {
+                openModal();
+            },
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data)
+                data = JSON.parse(data);
+                var i;
+                var k;
+                var l;
+                var character_values = {};
+                for (i = 0; i < data.length; i++) {
+                    Object.keys(data[i]).forEach(function (key) {
+                        console.log(key);
+                        var tweets = (data[i][key]);
+
+                        for (var k = 0; k < tweets.length; k++) {
+                            var name = tweets[k][0];
+                            var value = tweets[k][1];
+                            character_values[name] = (character_values[name] || 0) + 1;
+                            character_values[name] += parseFloat(value);
+                            console.log(tweets[k][0], tweets[k][1]);
+                            //Do something
+                        }
+                    });
+
+                }
+
+
+                alert(getKeysWithHighestValue(character_values, 1)[0]);
+            },
+
+            complete: function (data) {
+                closeModal();
+
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+
+</script>
+</html>
