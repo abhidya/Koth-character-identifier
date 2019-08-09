@@ -5,8 +5,8 @@ import json
 
 from waitress import serve
 app = Flask(__name__)
-app.debug = True
-app.secret_key = 'development key'
+# app.debug = True
+# app.secret_key = 'development key'
 x = build_model()
 
 
@@ -30,5 +30,7 @@ def results():
     return json_tweets, 200
 
 
-if __name__ == '__main__':
-    serve(app, host='0.0.0.0', port=8080)
+if __name__ == "__main__":
+    # app.run() ##Replaced with below code to run it using waitress
+    serve(app, host='0.0.0.0', port=8000)
+

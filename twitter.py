@@ -38,8 +38,8 @@ def get_tweets(handle, max_position=None):
     url = "https://twitter.com/i/profiles/show/" + handle + "/timeline/tweets?include_available_features=false&include_entities=false&reset_error_state=false"
     if max_position != None:
         url = url + "&" + "max_position=" + max_position
-    browser.open(url)
     try:
+        browser.open(url)
         result = json.loads(browser.response.content)
         min_position = result['min_position']
 

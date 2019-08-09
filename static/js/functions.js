@@ -189,6 +189,7 @@ frm.submit(function (e) {
             console.log('Submission was successful.');
             console.log(data)
             data = JSON.parse(data);
+
             response = data;
             var i;
             var k;
@@ -311,6 +312,7 @@ frm.submit(function (e) {
         error: function (data) {
             console.log('An error occurred.');
             console.log(data);
+            console.alert("Twitter Search Error: Is the username correct? Check logs for more info")
         },
     });
 });
