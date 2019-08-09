@@ -60,6 +60,7 @@ var leastPeggyConf = 99;
 
 
 function findmaxmin(key, name, value) {
+
     switch (name) {
         case "hank":
             if (value > mostHankConf) {
@@ -104,28 +105,71 @@ function findmaxmin(key, name, value) {
     }
 }
 
+function buildtweettable(key, tweets) {
+
+    // Find a <table> element with id="myTable":
+    var table = document.getElementById("tableoftweets");
+
+// Create an empty <tr> element and add it to the 1st position of the table:
+    var row = table.insertRow(table.rows.length);
+
+// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    var tweettext = row.insertCell(0);
+// Add some text to the new cells:
+    tweettext.innerHTML = key;
+    var hank = row.insertCell(1);
+
+    var peggy = row.insertCell(2);
+    var bobby = row.insertCell(3);
+    var dale = row.insertCell(4);
+    var k = 0;
+    for (var k = 0; k < tweets.length; k++) {
+        var name = tweets[k][0];
+        var value = tweets[k][1];
+        value = value.toFixed(2);
+        switch (name) {
+            case "hank":
+                hank.innerText = value;
+                break;
+            case "dale":
+                dale.innerText = value;
+
+                break;
+            case "peggy":
+                peggy.innerText = value;
+
+                break;
+            case "bobby":
+                bobby.innerText = value;
+
+                break;
+        }
+    }
+
+}
+
 
 function buildmaxmin() {
     $("#Most_Bobby").text(mostBobby);
-    $("#Most_Bobby_conf").text("Confidence Level :   " + mostBobbyConf);
+    $("#Most_Bobby_conf").text("Confidence Level :   " + mostBobbyConf.toFixed(2));
     $("#Most_Dale").text(mostDale);
-    $("#Most_Dale_conf").text("Confidence Level :   " + mostDaleConf);
+    $("#Most_Dale_conf").text("Confidence Level :   " + mostDaleConf.toFixed(2));
     $("#Most_Hank").text(mostHank);
-    $("#Most_Hank_conf").text("Confidence Level :   " + mostHankConf);
+    $("#Most_Hank_conf").text("Confidence Level :   " + mostHankConf.toFixed(2));
     $("#Most_Peggy").text(mostPeggy);
-    $("#Most_Peggy_conf").text("Confidence Level :   " + mostPeggyConf);
-    $("#least_Bobby_conf").text("Confidence Level :   " + leastBobbyConf);
+    $("#Most_Peggy_conf").text("Confidence Level :   " + mostPeggyConf.toFixed(2));
+    $("#least_Bobby_conf").text("Confidence Level :   " + leastBobbyConf.toFixed(2));
     $("#least_Dale").text(leastDale);
-    $("#least_Dale_conf").text("Confidence Level :   " + leastDaleConf);
+    $("#least_Dale_conf").text("Confidence Level :   " + leastDaleConf.toFixed(2));
     $("#least_Hank").text(leastHank);
-    $("#least_Hank_conf").text("Confidence Level :   " + leastHankConf);
+    $("#least_Hank_conf").text("Confidence Level :   " + leastHankConf.toFixed(2));
     $("#least_Peggy").text(leastPeggy);
-    $("#least_Peggy_conf").text("Confidence Level " + leastPeggyConf);
+    $("#least_Peggy_conf").text("Confidence Level " + leastPeggyConf.toFixed(2));
 }
 
 var ctx = document.getElementById("myChart").getContext("2d");
 
-
+var response = {};
 var frm = $('#handle_form');
 
 //$("body").addClass("loading");
@@ -145,6 +189,7 @@ frm.submit(function (e) {
             console.log('Submission was successful.');
             console.log(data)
             data = JSON.parse(data);
+            response = data;
             var i;
             var k;
             var l;
@@ -153,16 +198,27 @@ frm.submit(function (e) {
                 Object.keys(data[i]).forEach(function (key) {
                     console.log(key);
                     var tweets = (data[i][key]);
-
+                    var max = -2;
+                    var maxName = "";
                     for (var k = 0; k < tweets.length; k++) {
                         var name = tweets[k][0];
                         var value = tweets[k][1];
+
+                        if (max == -2) {
+                            max = value;
+                            maxName = name;
+                        } else {
+                            if (max < value) {
+                                max = value;
+                                maxName = name;
+                            }
+                        }
                         findmaxmin(key, name, value);
-                        character_values[name] = (character_values[name] || 0) + 1;
-                        character_values[name] += parseFloat(value);
                         console.log(tweets[k][0], tweets[k][1]);
                         //Do something
                     }
+                    character_values[maxName] = (character_values[maxName] || 0) + 1;
+                    character_values[maxName] += parseFloat(1);
                 });
 
             }
@@ -191,7 +247,7 @@ frm.submit(function (e) {
                 options: {
                     responsive: true,
                     responsiveAnimationDuration: 2,
-                        maintainAspectRatio: false,
+                    maintainAspectRatio: false,
                     legend: {
                         display: true,
                         position: 'right',
@@ -241,6 +297,16 @@ frm.submit(function (e) {
             build_main();
             new Chart(ctx, config);
             buildmaxmin();
+            var i = 0;
+            for (i = 0; i < response.length; i++) {
+                Object.keys(response[i]).forEach(function (key) {
+                    var tweets = (response[i][key]);
+                    buildtweettable(key, tweets);
+
+                });
+
+            }
+
         },
         error: function (data) {
             console.log('An error occurred.');
