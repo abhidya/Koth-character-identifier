@@ -39,8 +39,8 @@ def droprows(filtered, bad_bois):
 
 def build_model():
 
-    # file = "faked_koth_quotes.csv"
-    file = "koth_quotes.csv"
+    file = "faked_koth_quotes.csv"
+    #file = "koth_quotes.csv"
 
 
     if path.exists(file):

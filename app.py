@@ -15,7 +15,9 @@ compress = Compress()
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    # return render_template('index.html')
+    return render_template('mini_index.html')
+
 
 
 @app.route('/results', methods=['GET', 'POST'])

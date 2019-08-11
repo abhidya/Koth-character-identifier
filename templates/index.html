@@ -5,6 +5,38 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/favicon-16x16.png">
+    <link rel="manifest"
+          href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage"
+          content="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/css/styles.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
@@ -40,7 +72,8 @@
         <br>
         <form class="example" action="/results" id="handle_form" method="post" style="margin:auto;max-width:300px"
               onsubmit="hideentry();">
-            <img src="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/bobby_home.jpg" alt="Bobby Hill">
+            <img src="https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/bobby_home.jpg"
+                 alt="Bobby Hill">
             <br>
             <br> <br><br><br><br>
 
@@ -58,99 +91,98 @@
 <div class="MainContainer" id="visualizations" style="display: none"><br>
 
 
+    <div class="ContentContainer" style="position: relative; height:100vh; width:100vw">
+        <h1 class="center" id="proclamation" style=" margin-left: 30vw"></h1>
+        <img class="center" id="biggie_char" style="max-height:80%; max-width:80%;    object-fit: contain;">
+    </div>
 
 
-            <div class="ContentContainer" style="position: relative; height:100vh; width:100vw">
-                <h1 class="center" id="proclamation" style=" margin-left: 30vw"></h1>
-                <img class="center" id="biggie_char" style="max-height:80%; max-width:80%;    object-fit: contain;">
-            </div>
+    <div style="position: relative; height:40vh; width:40vw;text-align:center; margin-left: 30vw"
+         class="chart">
+        <br>
+        <br>
+        <br>
+        <h2>Tweet Breakdown</h2>
+        <canvas id="myChart"></canvas>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
+
+    <br>
 
 
-            <div style="position: relative; height:40vh; width:40vw;text-align:center; margin-left: 30vw"
-                 class="chart">
-                                    <br>
-                    <br>
-                    <br>
-                <h2>Tweet Breakdown</h2>
-                <canvas id="myChart"></canvas>                    <br>
-                    <br>
-                    <br>
-            </div>
-            <br>
+    </tr>
+    <tr>
 
-            <br>
-
-
-        </tr>
-        <tr>
-
-            <div class="ContentContainer" style="position: relative; height:100vh; width:80vw;  margin-right: 10vw;
+        <div class="ContentContainer" style="position: relative; height:100vh; width:80vw;  margin-right: 10vw;
   margin-left: 10vw;">
 
-                <div class="Content">
-                    <br>
-                    <br>
-                    <h1 style="text-align:center"> Top Quotes</h1>
-                    <h3> Most Hank Like Quote</h3>
+            <div class="Content">
+                <br>
+                <br>
+                <h1 style="text-align:center"> Top Quotes</h1>
+                <h3> Most Hank Like Quote</h3>
 
-                    <blockquote class="ludwig" id="Most_Hank">
-                        // Put the rest of my page content here
-                    </blockquote>
-                    <footer id="Most_Hank_conf">
-                        // Put the rest of my page content here
-                    </footer>
-                    <br>
-                    <br>
-                    <h3> Most Peggy Like Quote</h3>
+                <blockquote class="ludwig" id="Most_Hank">
+                    // Put the rest of my page content here
+                </blockquote>
+                <footer id="Most_Hank_conf">
+                    // Put the rest of my page content here
+                </footer>
+                <br>
+                <br>
+                <h3> Most Peggy Like Quote</h3>
 
-                    <blockquote class="ludwig" id="Most_Peggy"></blockquote>
-                    <footer id="Most_Peggy_conf"></footer>
-                    <br>
-                    <br>
-                    <h3> Most Bobby Like Quote</h3>
+                <blockquote class="ludwig" id="Most_Peggy"></blockquote>
+                <footer id="Most_Peggy_conf"></footer>
+                <br>
+                <br>
+                <h3> Most Bobby Like Quote</h3>
 
-                    <blockquote class="ludwig" id="Most_Bobby"></blockquote>
-                    <footer id="Most_Bobby_conf"></footer>
-                    <br>
-                    <br>
-                    <h3> Most Dale Like Quote</h3>
+                <blockquote class="ludwig" id="Most_Bobby"></blockquote>
+                <footer id="Most_Bobby_conf"></footer>
+                <br>
+                <br>
+                <h3> Most Dale Like Quote</h3>
 
-                    <blockquote class="ludwig" id="Most_Dale"></blockquote>
-                    <footer id="Most_Dale_conf"></footer>
-                    <br>
-                    <br>
-                    <br>
-                    <h1 style="text-align:center"> Least Quotes</h1>
+                <blockquote class="ludwig" id="Most_Dale"></blockquote>
+                <footer id="Most_Dale_conf"></footer>
+                <br>
+                <br>
+                <br>
+                <h1 style="text-align:center"> Least Quotes</h1>
 
-                    <h3> Least Hank Like Quote</h3>
+                <h3> Least Hank Like Quote</h3>
 
-                    <blockquote class="ludwig" id="least_Hank"></blockquote>
-                    <footer id="least_Hank_conf"></footer>
-                    <br>
-                    <br>
-                    <h3> Least Peggy Like Quote</h3>
+                <blockquote class="ludwig" id="least_Hank"></blockquote>
+                <footer id="least_Hank_conf"></footer>
+                <br>
+                <br>
+                <h3> Least Peggy Like Quote</h3>
 
-                    <blockquote class="ludwig" id="least_Peggy"></blockquote>
-                    <footer id="least_Peggy_conf"></footer>
-                    <br>
-                    <br>
-                    <h3> Least Bobby Like Quote</h3>
+                <blockquote class="ludwig" id="least_Peggy"></blockquote>
+                <footer id="least_Peggy_conf"></footer>
+                <br>
+                <br>
+                <h3> Least Bobby Like Quote</h3>
 
-                    <blockquote class="ludwig" id="least_Bobby"></blockquote>
-                    <footer id="least_Bobby_conf"></footer>
-                    <br>
-                    <br>
-                    <h3> Least Dale Like Quote</h3>
+                <blockquote class="ludwig" id="least_Bobby"></blockquote>
+                <footer id="least_Bobby_conf"></footer>
+                <br>
+                <br>
+                <h3> Least Dale Like Quote</h3>
 
-                    <blockquote class="ludwig" id="least_Dale"></blockquote>
-                    <footer id="least_Dale_conf"></footer>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                                        <h1 style="text-align:center"> All Tweets & Scores </h1>
+                <blockquote class="ludwig" id="least_Dale"></blockquote>
+                <footer id="least_Dale_conf"></footer>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 style="text-align:center"> All Tweets & Scores </h1>
 
-                    <table class="tweets-table" id="tableoftweets"  style="position: relative; height:100vh; width:80vw">
+                <table class="tweets-table" id="tableoftweets" style="position: relative; height:100vh; width:80vw">
                     <tr>
                         <th>Tweet</th>
                         <th>Hank Hill</th>
@@ -160,12 +192,11 @@
                     </tr>
                 </table>
 
-                </div>
             </div>
+        </div>
 
-            <br>
-            <br>
-
+        <br>
+        <br>
 
 
 </div>
