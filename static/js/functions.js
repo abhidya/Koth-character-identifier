@@ -15,10 +15,10 @@ function closeModal() {
 
 function build_main() {
     const char_dicts = {
-        "hank": ['Hank Hill', "/static/images/big_hank.gif"],
-        "peggy": ['Peggy Hill', "/static/images/big_peggy.png"],
-        "dale": ['Dale Gribble', "/static/images/big_dale.gif"],
-        "bobby": ['Bobby Hill', "/static/images/big_bobby.gif"],
+        "hank": ['Hank Hill', "https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/big_hank.gif"],
+        "peggy": ['Peggy Hill', "https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/big_peggy.png"],
+        "dale": ['Dale Gribble', "https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/big_dale.gif"],
+        "bobby": ['Bobby Hill', "https://cdn.jsdelivr.net/gh/abhidya/Koth-character-identifier/static/images/big_bobby.gif"],
 
     };
     const temp = getKeysWithHighestValue(character_values, 1)[0];
