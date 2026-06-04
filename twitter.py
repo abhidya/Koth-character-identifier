@@ -3,12 +3,15 @@ import re
 import string
 import requests
 from bs4 import BeautifulSoup
-from robobrowser import RoboBrowser
+try:
+    from robobrowser import RoboBrowser
+except ImportError:
+    RoboBrowser = None
 
 
 def strip_links(text):
     try:
-        link_regex = re.compile('((https?):((//)|(\\\\))+([\w\d:#@%/;$()~_?\+-=\\\.&](#!)?)*)', re.DOTALL)
+        link_regex = re.compile(r'((https?):((//)|(\\\\))+([\w\d:#@%/;$()~_?\+-=\\\.&](#!)?)*)', re.DOTALL)
         links = re.findall(link_regex, str(text))
         for link in links:
             text = text.replace(link[0], ', ')
@@ -33,6 +36,9 @@ def strip_all_entities(text):
 
 
 def get_tweets(handle, max_position=None):
+    if RoboBrowser is None:
+        return "Twitter Search Error: RoboBrowser is not installed"
+
     session = requests.Session()
     browser = RoboBrowser(session=session, parser="lxml")
     url = "https://twitter.com/i/profiles/show/" + handle + "/timeline/tweets?include_available_features=false&include_entities=false&reset_error_state=false"
@@ -55,7 +61,19 @@ def clean_tweets(tweets):
 
 
 def hitting_twitter(handle):
-    min_position, tweets = get_tweets(handle)
+    if handle.lower() in {"demo", "offline", "fixture"}:
+        return [
+            "I tell you what, propane and lawn work make a fine afternoon.",
+            "That school dance joke was funny enough for extra snacks.",
+            "My Spanish class essay proves I am a genius teacher.",
+            "The government alien conspiracy fits in my pocket.",
+        ]
+
+    first_page = get_tweets(handle)
+    if isinstance(first_page, str):
+        return first_page
+
+    min_position, tweets = first_page
     for i in range(0, 6):
         min_position1, links1 = get_tweets(handle, min_position)
         tweets = tweets + links1

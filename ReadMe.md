@@ -20,6 +20,21 @@ python app.py
 
 The app depends on older Twitter scraping behavior and older Python package versions, so treat this as a legacy research/demo project until the scraping layer and dependencies are refreshed.
 
+## Offline demo path
+
+The Flask app now starts without training the legacy Doc2Vec model or scraping
+Twitter at import time. By default it uses a small deterministic offline
+classifier for local demos:
+
+```sh
+python app.py
+python smoke_test.py
+```
+
+Use the demo handle in the form, or post `twittername=demo` to `/results`.
+`/health` reports whether the app is using offline or live model mode. Set
+`KOTH_LIVE_MODEL=1` to attempt the original Doc2Vec model path.
+
 TO DO:
 
 Model:
