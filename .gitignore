@@ -1,8 +1,11 @@
 venv/
 .venv/
+env/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 .idea/
 .DS_Store
 .~lock.*
+.pytest_cache/
+.coverage
