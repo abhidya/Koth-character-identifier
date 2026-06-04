@@ -7,6 +7,19 @@ I use Doc2Vec with Data (Tweets) scrapped from a twitter user to find who you ar
 
 Currently only classifying Hank, Bobby, Peggy and Dale
 
+## Local setup
+
+Create a local virtual environment instead of committing one to the repo:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
+
+The app depends on older Twitter scraping behavior and older Python package versions, so treat this as a legacy research/demo project until the scraping layer and dependencies are refreshed.
+
 TO DO:
 
 Model:
